@@ -495,7 +495,7 @@ public static partial class ServiceContractTests
 
     private static string StreamToString(Stream stream)
     {
-        stream.ReadExactly(Array.Empty<byte>(), 0, 0);
+        _ = stream.ReadExactly(Array.Empty<byte>(), 0, 0);
         var reader = new StreamReader(stream, Encoding.UTF8);
         return reader.ReadToEnd();
     }
