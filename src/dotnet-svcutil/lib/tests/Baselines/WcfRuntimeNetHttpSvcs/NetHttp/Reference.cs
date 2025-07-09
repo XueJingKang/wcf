@@ -616,8 +616,8 @@ namespace NetHttp_NS
         System.Threading.Tasks.Task TestFaultIntAsync(int faultCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfService/TestFaults", ReplyAction="http://tempuri.org/IWcfService/TestFaultsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(NetHttp_NS.FaultDetail), Action="http://tempuri.org/IWcfService/TestFaultFaultDetailFault", Name="FaultDetail", Namespace="http://www.contoso.com/wcfnamespace")]
         [System.ServiceModel.FaultContractAttribute(typeof(NetHttp_NS.FaultDetail), Action="http://tempuri.org/IWcfService/TestFaultFaultDetailFault2", Name="FaultDetail2", Namespace="http://www.contoso.com/wcfnamespace")]
+        [System.ServiceModel.FaultContractAttribute(typeof(NetHttp_NS.FaultDetail), Action="http://tempuri.org/IWcfService/TestFaultFaultDetailFault", Name="FaultDetail", Namespace="http://www.contoso.com/wcfnamespace")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<NetHttp_NS.TestFaultsResponse> TestFaultsAsync(NetHttp_NS.TestFaultsRequest request);
         
@@ -739,11 +739,11 @@ namespace NetHttp_NS
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> EchoMessageResponseWithMessageHeaderAsync(NetHttp_NS.XmlMessageContractTestRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://www.contoso.com/IXmlMessageContarctTestService/EchoMessageResquestWithMess" +
-            "ageHeader", ReplyAction="http://www.contoso.com/IXmlMessageContarctTestService/EchoMessageResquestWithMess" +
-            "ageHeaderResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://www.contoso.com/IXmlMessageContarctTestService/EchoMessageRequestWithMessa" +
+            "geHeader", ReplyAction="http://www.contoso.com/IXmlMessageContarctTestService/EchoMessageRequestWithMessa" +
+            "geHeaderResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> EchoMessageResquestWithMessageHeaderAsync(NetHttp_NS.XmlMessageContractTestRequestWithMessageHeader request);
+        System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> EchoMessageRequestWithMessageHeaderAsync(NetHttp_NS.XmlMessageContractTestRequestWithMessageHeader request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWcfService/IsHttpKeepAliveDisabled", ReplyAction="http://tempuri.org/IWcfService/IsHttpKeepAliveDisabledResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -2617,16 +2617,16 @@ namespace NetHttp_NS
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> NetHttp_NS.IWcfService.EchoMessageResquestWithMessageHeaderAsync(NetHttp_NS.XmlMessageContractTestRequestWithMessageHeader request)
+        System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> NetHttp_NS.IWcfService.EchoMessageRequestWithMessageHeaderAsync(NetHttp_NS.XmlMessageContractTestRequestWithMessageHeader request)
         {
-            return base.Channel.EchoMessageResquestWithMessageHeaderAsync(request);
+            return base.Channel.EchoMessageRequestWithMessageHeaderAsync(request);
         }
         
-        public System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> EchoMessageResquestWithMessageHeaderAsync(string XmlMessageContractTestRequestWithMessageHeaderMessage)
+        public System.Threading.Tasks.Task<NetHttp_NS.XmlMessageContractTestResponse> EchoMessageRequestWithMessageHeaderAsync(string XmlMessageContractTestRequestWithMessageHeaderMessage)
         {
             NetHttp_NS.XmlMessageContractTestRequestWithMessageHeader inValue = new NetHttp_NS.XmlMessageContractTestRequestWithMessageHeader();
             inValue.XmlMessageContractTestRequestWithMessageHeaderMessage = XmlMessageContractTestRequestWithMessageHeaderMessage;
-            return ((NetHttp_NS.IWcfService)(this)).EchoMessageResquestWithMessageHeaderAsync(inValue);
+            return ((NetHttp_NS.IWcfService)(this)).EchoMessageRequestWithMessageHeaderAsync(inValue);
         }
         
         public System.Threading.Tasks.Task<bool> IsHttpKeepAliveDisabledAsync()
